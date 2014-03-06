@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85584ABA18C8D7F80028ED12 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 85584AB918C8D7F80028ED12 /* CardMatchingGame.m */; };
 		85E59AAD18C19F22004E62FE /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E59AAC18C19F22004E62FE /* PlayingCard.m */; };
 		85E59AB518C19F4C004E62FE /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E59AAF18C19F4C004E62FE /* Card.m */; };
 		85E59AB618C19F4C004E62FE /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E59AB118C19F4C004E62FE /* Deck.m */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		85584AB818C8D7F80028ED12 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
+		85584AB918C8D7F80028ED12 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGame.m; sourceTree = "<group>"; };
 		85E59AAC18C19F22004E62FE /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCard.m; path = Model/PlayingCard.m; sourceTree = SOURCE_ROOT; };
 		85E59AAE18C19F4C004E62FE /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Model/Card.h; sourceTree = SOURCE_ROOT; };
 		85E59AAF18C19F4C004E62FE /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Model/Card.m; sourceTree = SOURCE_ROOT; };
@@ -94,6 +97,8 @@
 		85E59AB818C19FBB004E62FE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				85584AB818C8D7F80028ED12 /* CardMatchingGame.h */,
+				85584AB918C8D7F80028ED12 /* CardMatchingGame.m */,
 				85E59AAC18C19F22004E62FE /* PlayingCard.m */,
 				85E59AB418C19F4C004E62FE /* PlayingCardDeck.m */,
 				85E59AB318C19F4C004E62FE /* PlayingCardDeck.h */,
@@ -282,6 +287,7 @@
 				85ECFD5B18BCC55800157318 /* CardGameViewController.m in Sources */,
 				85E59AB518C19F4C004E62FE /* Card.m in Sources */,
 				85E59AB718C19F4C004E62FE /* PlayingCardDeck.m in Sources */,
+				85584ABA18C8D7F80028ED12 /* CardMatchingGame.m in Sources */,
 				85ECFD5118BCC55800157318 /* main.m in Sources */,
 				85E59AAD18C19F22004E62FE /* PlayingCard.m in Sources */,
 				85E59AB618C19F4C004E62FE /* Deck.m in Sources */,

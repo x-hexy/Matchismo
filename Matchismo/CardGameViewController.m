@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (nonatomic) int flipCount;
 
-@property (nonatomic) Deck *deck;
+@property (strong, nonatomic) Deck *deck;
 
 @end
 
@@ -24,11 +24,13 @@
 
 - (Deck *) deck
 {
-    if (!_deck) {
-        _deck = [[PlayingCardDeck alloc] init];
-    }
-    
+    if (!_deck) _deck = [self createDeck];
     return _deck;
+}
+
+- (Deck *) createDeck
+{
+    return [[PlayingCardDeck alloc] init];
 }
 
 - (void) setFlipCount:(int)flipCount
@@ -41,7 +43,7 @@
 - (IBAction)touchCardButton:(UIButton *)sender {
     if (![sender.currentTitle length])
     {
-        Card *card = self.deck.drawRandomCard;
+        Card *card = [self.deck drawRandomCard];
         if (card) {
             [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"]
                               forState:UIControlStateNormal];
