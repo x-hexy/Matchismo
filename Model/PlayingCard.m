@@ -23,6 +23,27 @@
         }
     }
     
+    if ([otherCards count] == 2) {
+        
+        // compare already chosen two cards first
+        PlayingCard *firstCard = [otherCards firstObject];
+        PlayingCard *secondCard = [otherCards objectAtIndex:1];
+        if ([firstCard.suit isEqualToString:secondCard.suit]) {
+            score = 1;
+        } else if (firstCard.rank == secondCard.rank) {
+            score = 2;
+        }
+        
+        // compare currently chosen card with already chosen cards
+        for (PlayingCard *otherCard in otherCards) {
+            if ([self.suit isEqualToString:otherCard.suit]) {
+                score += 1;
+            } else if (self.rank == otherCard.rank) {
+                score += 2;
+            }
+        }
+    }
+    
     return score;
 }
 

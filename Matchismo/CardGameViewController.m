@@ -17,6 +17,9 @@
 @property (nonatomic, strong) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *gameModeSwitch;
+@property (weak, nonatomic) IBOutlet UITextField *displayResultText;
+
 
 @end
 
@@ -37,8 +40,16 @@
 
 - (IBAction)touchCardButton:(UIButton *)sender
 {
+    // disable gameMode switcher first (game start)
+    [self.gameModeSwitch setEnabled:NO];
+    
+    // determine game mode:
+    // switch off > 2-card-match
+    // switch on  > 3-card-match
+    self.game.gameMode = self.gameModeSwitch.on ? 1 : 0;
+    
     int cardIndex = [self.cardButtons indexOfObject:sender];
-    [self.game chooseCareAtIndex:cardIndex];
+    [self.game chooseCardAtIndex:cardIndex];
     [self updateUI];
 
 }
@@ -55,6 +66,7 @@
         cardButton.enabled = !card.isMatched;
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+    self.displayResultText.text = self.game.matchingResult;
     
 }
 
@@ -68,6 +80,16 @@
     return [UIImage imageNamed:card.isChosen ? @"cardfront" : @"cardback"];
 }
 
+- (IBAction)touchNewGameButton:(UIButton *)sender
+{
+    self.game = nil;
+    
+    // enable gameMode switcher (for user to choose game mode)
+    [self.gameModeSwitch setEnabled:YES];
+    
+    [self updateUI];
+    
+}
 
 - (void)viewDidLoad
 {

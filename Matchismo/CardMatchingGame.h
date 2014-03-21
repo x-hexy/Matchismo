@@ -15,8 +15,14 @@
 - (instancetype)initWithCardCount:(NSUInteger)count
                         usingDeck: (Deck *)deck;
 
-- (void)chooseCareAtIndex:(NSUInteger) index;
+- (void)chooseCardAtIndex:(NSUInteger) index;
 - (Card *)cardAtIndex:(NSUInteger) index;
+
+// matchingResult for later presenting
+@property (nonatomic) NSString *matchingResult;
+
+// play mode: 2-card-match mode (0) or 3-card-match mode (1)
+@property (nonatomic) NSUInteger gameMode;
 
 @property (nonatomic, readonly) NSInteger score;
 
